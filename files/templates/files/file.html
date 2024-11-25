@@ -1,7 +1,9 @@
 {% extends 'files/site.html' %}
 {% block title %} File details {% endblock %}
 {% block body %}
-    {{file}}
+    <h1>{{file.title}}</h1>
+    <p>{{file.name}}</p>
+    <p>{{file.type}}</p>
 {% endblock %}
 
 
