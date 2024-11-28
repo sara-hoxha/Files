@@ -23,7 +23,19 @@ def edit(request, file_id):
     print(name, file_type, f)
     
     if f:
-        f.name = name
-        f.file_type = file_type
+        if name:
+            f.name = name
+        if file_type:
+            f.file_type = file_type
         f.save()
         return redirect(files)
+    else:
+        return redirect(files)
+    
+def delete(request, file_id):
+    f = File.objects.get(pk = file_id)
+    if f:
+        f.delete()
+    return redirect(files)
+    
+        
