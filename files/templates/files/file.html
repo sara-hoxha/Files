@@ -10,7 +10,7 @@
         <p>Uploaded: {{file.upload_timestamp}}</p>
         <button>Update</button>
     </form>
-    <img src="{{file.file.url}}">
+    <a href={{file.file.url}} download="{{file.name}}">Download</a>
     <!-- Delete Form -->
     <form action="{% url 'delete' file.id %}">
         <button type="submit">Delete</button>
