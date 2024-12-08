@@ -25,9 +25,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 SECRET_KEY = 'django-insecure-znc!1f7oar04kt=_#ulf#s^)rd=8f@)7s5nh1ux!n40u+5b#5$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'Files-env-2.eba-bwwqq825.us-east-1.elasticbeanstalk.com', '35.171.180.219']
 
 
 # Application definition
@@ -119,8 +119,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATIC_ROOT = 'static'
+# The folder where Django will collect all static files when you run collectstatic
+STATIC_ROOT = 'static'
+
+# Additional directories to look for static files during development
+# STATICFILES_DIRS = [
+#     'static',  # This points to the local 'static' folder
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

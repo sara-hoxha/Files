@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from . import views, settings
 from django.conf.urls.static import static
+from django.views.static import serve
+from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +29,15 @@ urlpatterns = [
     path('files/edit/<int:file_id>/', views.edit, name='edit'),
     path('files/delete/<int:file_id>/', views.delete, name='delete'),
     path('files/upload/', views.upload, name='upload'),
+    # re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    # re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# Serve media files in development
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# http://127.0.0.1:8000/admin/css/base.css
